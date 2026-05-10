@@ -11,7 +11,7 @@ from tensorflow.keras.preprocessing.sequence import pad_sequences
 x_train = pad_sequences(x_train, maxlen=100)
 x_test  = pad_sequences(x_test, maxlen=100)
 
-model = Sequential([ Embedding(10000, 16, input_length=100),Flatten(), Dense(64, activation='relu'),Dense(1, activation='sigmoid')
+model = Sequential([ Embedding(10000, 16, input_length=100),Flatten(), Dense(64, activation='relu'),Dense(2, activation='sigmoid')
 ])
 model.compile(optimizer='adam', loss='binary_crossentropy')
 model.fit(x_train, y_train, epochs=10, batch_size=256)
